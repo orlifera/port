@@ -206,20 +206,12 @@ div#contacts {
   fill: var(--text-100);
 }
 
-[data-theme="light"] #contatti img {
-  filter: invert(0);
+#contatti {
+  padding-bottom: 1.5em;
 }
 
-[data-theme="light"] #contatti img:hover {
-  filter: invert(1);
-}
-
-[data-theme="dark"] #contatti img {
-  filter: invert(.8);
-}
-
-[data-theme="dark"] #contatti img:hover {
-  filter: invert(.5);
+#contatti li:hover svg {
+  fill: var(--text-200);
 }
 
 #contatti li {
@@ -313,10 +305,10 @@ div#contacts {
 }
 
 #contact-form input[type="submit"]:hover {
-  background-color: var(--primary-100);
+  background-color: var(--text-200);
   color: var(--bg-100);
   outline: none;
-  border: none;
+  padding: .75em;
 }
 
 
@@ -484,23 +476,44 @@ div#contacts {
 
 /**PROJECTS**/
 
-.heading {
-  text-align: center;
-  width: 100%;
-  color: var(--text-100);
-  padding: 1em;
+#projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3em;
+  margin: auto;
+  list-style: none;
 }
 
-#project-list {
-  display: flex;
+/* 
+#projects li {
+  flex: 0 0 calc(33.333% - 1em);
+margin: 5em;
 }
 
+*/
 .card {
-  width: 30%;
+  border-radius: 1em;
+  background-color: var(--primary-300);
+  margin: auto;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 1em;
+  text-align: center;
+  max-width: 30em;
+  display: inline-block;
+  color: var(--text-100);
 }
 
-.card img {
+.profile-picture {
   width: 100%;
-  object-fit: cover;
-  border-radius: 30px;
+  height: auto;
+  margin: auto;
+}
+
+.card .card-title {
+  font-size: 2em;
+}
+
+.student {
+  display: inline-block;
+  margin: 5em;
 }
