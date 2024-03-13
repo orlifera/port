@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Card(props) {
     return (
-        <li>
+        <li className='card-container'>
             <a href=''>
                 <div className="card">
                     <img className='profile-picture' alt="profile picture" src={ props.path }></img>

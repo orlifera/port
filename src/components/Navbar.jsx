@@ -5,7 +5,7 @@ function Navbar() {
 
     return (
         <nav id="menu">
-            <a id="logo" href="index.html">
+            <a id="logo" href="/">
                 <p>Orlando Ferazzani</p>
             </a>
             <ul>
