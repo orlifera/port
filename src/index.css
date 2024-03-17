@@ -510,6 +510,7 @@ margin: 5em;
 .profile-picture {
   width: 100%;
   height: auto;
+  max-height: 18em;
   margin: auto;
 }
 
@@ -524,7 +525,55 @@ margin: 5em;
   flex-direction: column;
 }
 
+/**DETAILS**/
+
+.projectDetails h2 {
+  margin: auto;
+  width: 30%;
+  color: var(--text-100);
+  text-align: center;
+  font-size: 2em;
+  padding: 1em;
+
+}
+
+.projectDetails img {
+  margin: auto;
+  width: 70em;
+  display: flex;
+  padding: 2em 2em 0 2em;
+}
+
+.projectDetails p {
+  margin: auto;
+  width: 50%;
+  color: var(--text-100);
+  text-align: justify;
+  font-size: 1.2em;
+  padding-bottom: 3em;
+}
+
+.projectDetails figcaption {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-100);
+  padding: 0 3em 3em 3em;
+}
+
+.projectDetails svg {
+  display: flex;
+  margin: auto;
+}
+
 /**FOOTER**/
+
+#bottom {
+  width: 100%;
+  color: var(--text-100);
+}
 
 #footer-list {
   border-top: 1px solid var(--primary-100);
@@ -533,4 +582,8 @@ margin: 5em;
   flex-direction: column;
   text-align: center;
   margin-top: 20em;
+}
+
+#footer-list a {
+  color: var(--text-200);
 }

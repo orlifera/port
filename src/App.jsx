@@ -12,7 +12,7 @@ import Details from './components/Details'; // Import the Details component
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={ <Home /> } />
@@ -23,7 +23,7 @@ function App() {
         <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
