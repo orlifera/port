@@ -8,11 +8,15 @@ function Card(props) {
 
     return (
         <li className='card-container'>
-            <Link to={ `/details/${id}` }>
-                <div className="card" >
-                    <img className='profile-picture' alt="profile picture" src={ path }></img>
-                    <h2 className='card-title'>Project: { projectName }</h2>
-                    <p className='card-desc'>Description: { description }</p>
+            <div className="card" >
+                <Link to={ `/details/${id}` }>
+                    <div className="card-content">
+                        <img className='profile-picture' alt="profile picture" src={ path }></img>
+                        <h2 className='card-title'>Project: { projectName }</h2>
+                        <p className='card-desc'>Description: { description }</p>
+                    </div>
+                </Link>
+                <div className='card-footer'>
                     <a target='_blank' href={ repo }>
 
                         <svg width="30px" height="30px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" className='icon'>
@@ -28,13 +32,13 @@ function Card(props) {
                         </svg>
                     </a>
                 </div>
-            </Link>
-        </li>
+            </div>
+        </li >
     );
 }
 
 Card.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string,
     path: PropTypes.string,
     projectName: PropTypes.string,
     description: PropTypes.string,
