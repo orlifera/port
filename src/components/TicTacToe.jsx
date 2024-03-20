@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react'
-// import circle from '../assets/circle.png'
-// import cross from '../assets/cross.png'
+import circle from '../assets/images/circle.png'
+import cross from '../assets/images/cross.png'
 
-let data = Array(9).fill(null)
+let data = ["", "", "", "", "", "", "", "", ""];
 console.log(data)
 
 
 function TicTacToe() {
 
     const [count, setCount] = useState(0);
-    const [Lock, setLock] = useState(false);
+    const [lock, setLock] = useState(false);
     const titleRef = useRef(null);
     let box1 = useRef(null);
     let box2 = useRef(null);
@@ -24,7 +24,7 @@ function TicTacToe() {
     let box_array = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
 
     const toggle = (e, num) => {
-        if (lock) {
+        if (lock || data[num]) {
             return 0;
         }
         if (count % 2 === 0) {
@@ -37,17 +37,11 @@ function TicTacToe() {
             setCount(c => c + 1);
         }
 
-        checkWin();
+        checkWin(data);
     }
 
-    const won = (winner) => {
-        setLock(true);
-        if (winner === "X") {
-            titleRef.current.innerHTML = "Cross Won!";
-        } else {
-            titleRef.current.innerHTML = "Circle Won!";
-        }
-    }
+
+
 
     function checkWin(data) {
         if (data[0] === data[1] && data[1] === data[2] && data[2] !== "") {
@@ -77,22 +71,26 @@ function TicTacToe() {
         else if (data[2] === data[4] && data[4] === data[6] && data[6] !== "") {
             won(data[6]);
         }
-
     }
-
-    if (checkWin(data)) {
-        won(data);
+    const won = (winner) => {
+        setLock(true);
+        if (winner === "X") {
+            titleRef.current.innerHTML = "Cross Won!";
+        } else {
+            titleRef.current.innerHTML = "Circle Won!";
+        }
     }
 
 
 
     const reset = () => {
+        console.log("reset");
         setLock(false);
-        data = Array(9).fill(null);
+        data = ["", "", "", "", "", "", "", "", ""];
         titleRef.current.innerHTML = "Tic Tac Toe";
-        box_array.forEach((box) => {
-            box.current.innerHTML = "";
-        });
+        box_array.map((e) => {
+            e.current.innerHTML = "";
+        })
     }
 
     return (
@@ -115,7 +113,7 @@ function TicTacToe() {
                     <div className="box" ref={ box9 } onClick={ (e) => toggle(e, 8) }></div>
                 </div>
             </div>
-            <button className='reset' onClick={ () => { reset() } }>Reset</button>
+            <button className='reset' onClick={ () => { reset() } } value="Reset" >Reset</button>
 
         </div>
     )

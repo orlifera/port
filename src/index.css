@@ -523,8 +523,61 @@ div#contacts {
 .description {
   line-height: 1.3em;
   font-size: 1.5em;
+  padding: 1em;
 }
 
 .description a {
   color: var(--text-200);
+}
+
+/*TIC TAC TOE*/
+
+.baord-container {
+  text-align: center;
+}
+
+.TicTac {
+  margin: auto;
+  color: var(--text-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+.reset {
+  width: 10em;
+  height: 3em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: var(--bg-200);
+  color: var(--text-100);
+  display: block;
+  margin: 5em auto;
+}
+
+.reset:hover {
+  background-color: var(--text-200);
+  outline: none;
+
+}
+
+.box {
+  width: 10em;
+  height: 10em;
+  border: 1px solid var(--bg-100);
+  display: flex;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: var(--bg-200);
+  margin: .25em;
+}
+
+.board {
+  display: flex;
+  height: 30em;
+  width: 30em;
+  margin: auto;
 }
