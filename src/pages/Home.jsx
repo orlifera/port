@@ -1,12 +1,11 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Timer from '../components/Timer'
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
+import Heading from '../components/Heading'
 
 function Home() {
     return (
         <>
-            <Timer />
+            <Heading />
         </>
     )
 }

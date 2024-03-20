@@ -491,3 +491,11 @@ div#contacts {
 #footer-list a {
   color: var(--text-200);
 }
+
+/**HOME**/
+
+#title {
+  font-size: 5em;
+  text-align: center;
+  margin: 2em;
+}
