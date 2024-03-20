@@ -15,6 +15,11 @@
   transition: var(--default-transition);
 }
 
+/* 
+#body {
+  height: auto;
+} */
+
 :root {
   --default-transition: color .1s ease-in-out, fill .1s ease-in-out,
     border-color .3s ease-in-out, transform .3s ease-in-out;
@@ -39,6 +44,8 @@
   --icon-sun: #ee8e44;
   --icon-moon: #b7b7b7;
   --switch-pos: .25em;
+  --change: #aa8b52;
+  --change: #396ce2;
 }
 
 
@@ -62,6 +69,7 @@
   --icon-sun: var(--muted-text);
   --icon-moon: #b7b7b7;
   --switch-pos: 2.7em;
+  --change: #aa8b52;
 }
 
 
@@ -485,7 +493,6 @@ div#contacts {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 10em;
 }
 
 #footer-list a {
@@ -494,8 +501,30 @@ div#contacts {
 
 /**HOME**/
 
+#home {
+  text-align: center;
+  color: var(--text-100);
+}
+
 #title {
   font-size: 5em;
-  text-align: center;
-  margin: 2em;
+  padding: 1em;
+}
+
+#typewriter {
+  font-size: 2em;
+  padding: 1em;
+}
+
+#change {
+  color: var(--change);
+}
+
+.description {
+  line-height: 1.3em;
+  font-size: 1.5em;
+}
+
+.description a {
+  color: var(--text-200);
 }
