@@ -18,6 +18,7 @@ function Me() {
             </section>
 
             <section id="music" className="section">
+                <h2 className="title">Music I Love</h2>
                 <p>
                     If you don't care about anything else, and just want to know what music I like, here you are, consider this a "safe space":
                 </p>

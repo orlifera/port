@@ -23,6 +23,7 @@
 :root {
   --default-transition: color .1s ease-in-out, fill .1s ease-in-out,
     border-color .3s ease-in-out, transform .3s ease-in-out;
+  --spotify-green: #11d13e;
 }
 
 :root[data-theme="light"] {
@@ -597,8 +598,97 @@ div#contacts {
   line-height: 1.5em;
 }
 
+
+
+/**CURRENTLY PLAYING**/
 svg#song path {
-  stroke: var(--text-100);
+  stroke: white;
   stroke-width: 1.5;
   stroke-linecap: round;
 }
+
+#song {
+  display: flex;
+  margin: 0 2em;
+}
+
+div#Now {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  /* color: var(--text-100); */
+}
+
+#Now h2 {
+  padding-left: 1em;
+}
+
+.nowPlayingCard {
+  background-color: black;
+  box-shadow: 5px 5px 5px var(--primary-100);
+  border: 2px solid var(--primary-100);
+  width: 70%;
+  margin: 1em auto;
+}
+
+.nowPlayingInfo {
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+}
+
+.nowPlayingImage img {
+  width: 30%;
+  height: auto;
+  display: flex;
+  margin: auto;
+}
+
+.progress {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 1em;
+}
+
+.nowPlayingTime {
+  padding-left: 1em;
+  color: white;
+}
+
+.NowPlaying {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+.NowPlaying a {
+  color: white;
+
+}
+
+.custom-progress-bar {
+  width: 60%;
+  display: flex;
+  border-radius: 20px;
+  /*NO IDEA WHY THIS DOESNT WORK IF REMOVED*/
+}
+
+.custom-progress-bar::-webkit-progress-bar {
+  background-color: #ddd;
+  border-radius: 20px;
+}
+
+.custom-progress-bar::-webkit-progress-value {
+  background-color: var(--spotify-green);
+  border-radius: 20px;
+}
+
+/**PLAYLIST**/
