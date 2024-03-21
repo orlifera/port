@@ -22,7 +22,7 @@ function Details() {
         {
             id: 'DB',
             img: db,
-            caption: 'Diagramma ER ristruutturato',
+            caption: 'Diagramma ER ristrutturato',
             title: 'DataBase for E-commerce',
             description: 'Progetto basato su un database per un sito e-commerce avanzato, con magazzini sparsi per diverse città. Il database è stato creato per il progetto universitario del corso di Basi di Dati, che richiedeva la creazione, e il popolamento dello stesso. Come tecnologie, io e il collega abbiamo usato PostgreSQL e PGAdmin per la creazione e il popolamento del DB e C/C++ per le querys. Inoltre, è presente un file C/C++ nel quale son racchiuse le query. Creando il DB su PGAdmin, è possibile poi interrogarlo con il suddetto file. ',
             repo: 'https://github.com/orlifera/ProgettoBasiDati'

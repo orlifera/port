@@ -477,7 +477,7 @@ div#contacts {
 
 .projectDetails svg {
   display: flex;
-  margin: auto;
+  margin: 2em auto;
 }
 
 /**FOOTER**/
@@ -580,4 +580,25 @@ div#contacts {
   height: 30em;
   width: 30em;
   margin: auto;
+}
+
+#about {
+  margin: 1em;
+}
+
+.section {
+  color: var(--text-100);
+  text-align: center;
+  padding: 1em;
+}
+
+.section p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+svg#song path {
+  stroke: var(--text-100);
+  stroke-width: 1.5;
+  stroke-linecap: round;
 }
