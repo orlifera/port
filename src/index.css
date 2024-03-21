@@ -601,6 +601,15 @@ div#contacts {
 
 
 /**CURRENTLY PLAYING**/
+
+#offline {
+  width: 4em;
+  height: 4em;
+  fill: white;
+  display: flex;
+  margin: auto;
+}
+
 svg#song path {
   stroke: white;
   stroke-width: 1.5;
