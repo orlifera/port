@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -8,22 +8,37 @@ import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import Details from './pages/Details'; // Import the Details component
+import Header from './components/Header';
 
 function App() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // Empty dependency array to run only on mount
+
   return (
     <>
+      { windowWidth > 768 ? null : <Header /> } {/* Render Navbar if window width is greater than 768 */ }
       <Navbar />
-      <div id='body'>
-        <Routes>
-          <Route path="/" element={ <Home /> } />
-          <Route path="/about" element={ <About /> } />
-          <Route path="/projects" element={ <Projects /> } />
-          <Route path="/skills" element={ <Skills /> } />
-          <Route path="/contact" element={ <Contact /> } />
-          <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
-        </Routes>
-      </div>
-      <Footer />
+      <Routes>
+        <Route path="/" element={ <Home /> } />
+        <Route path="/about" element={ <About /> } />
+        <Route path="/projects" element={ <Projects /> } />
+        <Route path="/skills" element={ <Skills /> } />
+        <Route path="/contact" element={ <Contact /> } />
+        <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
+      </Routes>
+      { windowWidth > 768 ? <Footer /> : null }
     </>
   );
 }

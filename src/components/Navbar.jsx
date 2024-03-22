@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Switch from './Switch'
+import MobileNav from './MobileNav';
 
 function Navbar(props) {
     const [size, setSize] = useState(window.innerWidth);
@@ -25,7 +26,7 @@ function Navbar(props) {
                     <CustomLink href="/Projects">Progetti</CustomLink>
                     <CustomLink href="/Skills"><span lang='en'>Skills</span></CustomLink>
                     <CustomLink href="/Contact">Contatti</CustomLink>
-                    <li id="switch">
+                    <li className="switch">
                         <Switch />
                     </li>
                 </ul>
@@ -33,7 +34,9 @@ function Navbar(props) {
         )
     } else {
         return (
-            <></>
+            <>
+                <MobileNav />
+            </>
         )
     }
     function CustomLink({ href, children, ...props }) {

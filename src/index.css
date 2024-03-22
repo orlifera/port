@@ -14,10 +14,11 @@
   transition: var(--default-transition);
 }
 
-/* 
+
 #body {
   height: auto;
-} */
+  width: 100%;
+}
 
 :root {
   --default-transition: color .1s ease-in-out, fill .1s ease-in-out,
@@ -52,6 +53,8 @@
   --switch-pos: .25em;
   --change: #aa8b52;
   --change: #396ce2;
+  --sun-display: block;
+  --moon-display: none;
 }
 
 
@@ -76,6 +79,8 @@
   --icon-moon: #b7b7b7;
   --switch-pos: 2.7em;
   --change: #aa8b52;
+  --sun-display: none;
+  --moon-display: block;
 }
 
 
@@ -89,10 +94,34 @@ html {
   line-height: 1.5em;
 }
 
+header {
+  display: flex;
+  color: var(--text-100);
+  width: 100%;
+  border-bottom: 2px solid var(--text-100);
+}
 
+header a {
+  width: 40%;
+}
+
+header img#logo {
+  display: flex;
+  margin: auto;
+  width: 60%;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  margin: auto;
+  font-size: 1.2em;
+}
 
 /*NAVBAR*/
-#logo {
+#logo:not(header #logo) {
   width: 2em;
   text-indent: -999em;
   background-size: contain;
@@ -146,13 +175,13 @@ html {
   align-items: center;
 }
 
-a {
+a:not(header a) {
   text-decoration: none;
   color: var(--text-100);
 }
 
 
-a:hover:not(.card a, .playlist-link) {
+a:hover:not(.card a, .playlist-link, header a) {
   text-decoration: none;
   color: var(--text-200);
 }
@@ -374,7 +403,7 @@ div#contacts {
 
 /**PROJECTS**/
 
-.title {
+h1.title {
   text-transform: uppercase;
   text-align: center;
   width: 100%;
@@ -384,28 +413,24 @@ div#contacts {
 
 #projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
-  /* Three columns with equal width */
-  gap: 4em;
-  /* Adjust the gap between cards as needed */
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  gap: 2em;
   list-style: none;
-  padding: 0;
+  padding-top: 1em;
+  margin: 2em;
+  padding-bottom: 3em;
 }
-
 
 .card {
   flex: 1;
-  max-width: 30em;
-  min-width: 30em;
   border-radius: 1em;
   background-color: var(--bg-200);
-  margin: auto;
   box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
   padding: 1em;
   text-align: center;
   display: inline-block;
   color: var(--text-100);
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .card:hover {
@@ -414,16 +439,15 @@ div#contacts {
 }
 
 .profile-picture {
-  width: 100%;
-  max-width: auto;
-  min-width: auto;
+  width: 60%;
+  max-width: 100%;
   height: auto;
-  max-height: 20em;
+  max-height: 15em;
   margin: auto;
 }
 
 .card .card-title {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .card-container {
@@ -439,52 +463,40 @@ div#contacts {
   line-height: 1.2em;
 }
 
-.container {
-  margin: 5em;
-}
-
-/**DETAILS**/
-
-.projectDetails h2 {
-  margin: auto;
-  width: 30%;
-  color: var(--text-100);
-  text-align: center;
-  font-size: 2em;
-  padding: 1em;
-
-}
-
 .projectDetails img {
-  margin: auto;
-  width: 70em;
+  width: 70%;
   display: flex;
-  padding: 2em 2em 0 2em;
+  margin: auto;
+
 }
 
 .projectDetails p {
-  margin: auto;
-  width: 50%;
-  color: var(--text-100);
+  width: 90%;
+  font-size: 1em;
   text-align: justify;
-  font-size: 1.2em;
-  padding-bottom: 3em;
+  margin: auto;
+  padding-bottom: 2em;
+  color: var(--text-100);
 }
 
 .projectDetails figcaption {
-  margin: auto;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: var(--text-100);
-  padding: 0 3em 3em 3em;
+  padding: 1em;
 }
 
 .projectDetails svg {
   display: flex;
-  margin: 2em auto;
+  margin: 1em auto;
 }
+
+.detailsList h2 {
+  text-align: center;
+  color: var(--text-100);
+  font-size: 1.6em;
+  padding: 1em;
+}
+
 
 /**FOOTER**/
 
@@ -514,13 +526,17 @@ div#contacts {
 }
 
 #title {
+  width: 100%;
   font-size: 5em;
   padding: 1em;
+  line-height: 1em;
+  text-align: center;
 }
 
 #typewriter {
   font-size: 2em;
   padding: 1em;
+  line-height: 1em;
 }
 
 #change {
@@ -541,6 +557,7 @@ div#contacts {
 
 .baord-container {
   text-align: center;
+
 }
 
 .TicTac {
@@ -572,8 +589,8 @@ div#contacts {
 }
 
 .box {
-  width: 10em;
-  height: 10em;
+  width: 7em;
+  height: 7em;
   border: 1px solid var(--bg-100);
   display: flex;
   cursor: pointer;
@@ -584,9 +601,15 @@ div#contacts {
 
 .board {
   display: flex;
-  height: 30em;
-  width: 30em;
+  height: 25em;
+  width: 25em;
   margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-container {
+  padding-bottom: 5em;
 }
 
 #about {
@@ -645,7 +668,7 @@ div#Now {
   box-shadow: 5px 5px 5px var(--primary-100);
   border: 2px solid var(--primary-100);
   width: 70%;
-  margin: 1em auto;
+  margin: 3em auto;
 }
 
 .nowPlayingInfo {
@@ -671,6 +694,8 @@ div#Now {
 }
 
 .nowPlayingTime {
+  /* width: 20%; */
+  text-align: center;
   padding-left: 1em;
   color: white;
 }
@@ -707,6 +732,11 @@ div#Now {
 }
 
 /**PLAYLIST**/
+
+#playlist {
+  padding-bottom: 5em;
+}
+
 
 ol.song-list {
   width: 100%;
@@ -815,4 +845,64 @@ ol.song-list {
 #pl-3jH .song-list-container {
   background-color: var(--play-three-song);
   box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/*MOBILE NAV*/
+#mobile {
+  display: block;
+  width: 100%;
+  bottom: -1px;
+  margin: auto;
+  position: fixed;
+  background: linear-gradient(to top right, var(--primary-100), var(--primary-200));
+}
+
+#mobile ul {
+  padding: 0.8em 0;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+#mobile li {
+  display: inline-block;
+  padding: 0 1.5em;
+}
+
+#mob-theme-switcher {
+  background-color: var(--bg-100);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: .5em;
+  position: relative;
+  gap: 1em;
+}
+
+#mob-theme-switcher::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background-color: var(--switch-bg-icon);
+  border-radius: 50%;
+  z-index: 0;
+  left: 0;
+  transform: translateX(.25em);
+}
+
+#mob-theme-switcher svg {
+  z-index: 1;
+}
+
+#mob-theme-switcher #mobsun {
+  fill: var(--icon-sun);
+  display: var(--sun-display);
+}
+
+#mob-theme-switcher #mobmoon {
+  fill: var(--icon-moon);
+  display: var(--moon-display);
 }
