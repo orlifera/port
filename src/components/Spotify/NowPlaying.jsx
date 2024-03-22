@@ -164,7 +164,7 @@ function NowPlaying() {
 
                         <svg width="30px" height="30px" viewBox="0 0 24 24" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id='offline'>
 
-                            <g class="st0" id="grid_system" />
+
 
                             <g id="_icons">
 
@@ -209,6 +209,7 @@ function NowPlaying() {
                 </div>
             </div>
         </div>
+
     );
 };
 

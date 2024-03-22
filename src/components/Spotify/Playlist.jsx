@@ -56,26 +56,43 @@ const Playlist = ({ playlistName }) => {
     }
 
     return (
-        <li className='card-container'>
-            <div className='playlist-card'>
-                <h2 className='playlist-title'>{ playlist.name }</h2>
-                <p className='playlist-count'>Total Songs: { playlist.tracks.total }</p>
-                <img className='playlist-cover' src={ playlist.images[0].url } alt="Playlist Cover" />
-                <ul>
-                    { playlist.tracks.items.map((item) => (
-                        <li className='song-details' key={ item.track.id }>
-                            <img className='song-cover' src={ item.track.album.images[0].url } alt="Song Cover" />
-                            <div >
-                                <p>{ item.track.name }</p>
-                                <p>Duration: { msToMinutesAndSeconds(item.track.duration_ms) }</p>
+        <>
+            { playlist && (
+                <li className='card-container' id={ `pl-${playlist.id.slice(0, 3)}` }>
+                    <a className='playlist-link' href={ playlist.external_urls.spotify } target='_blank' rel='noreferrer'>
+                        <div className='playlist-card'>
+                            <div className='playlist-header'>
+                                <div className='image-container'>
+                                    <img className='playlist-cover' src={ playlist.images[0].url } alt="Playlist Cover" />
+                                </div>
+                                <div className='playlist-details'>
+                                    <h2 className='playlist-title'>{ playlist.name }</h2>
+                                    <p className='playlist-count'>Total Songs: { playlist.tracks.total }</p>
+                                    {/*Total duration in hours*/ }
+                                    <p className='playlist-duration'>Total Duration: { msToMinutesAndSeconds(playlist.tracks.items.reduce((acc, item) => acc + item.track.duration_ms, 0)) } min</p>
+                                </div>
                             </div>
-                        </li>
-                    )) }
-                </ul>
-            </div>
-        </li>
-
+                            <div className="song-list-container">
+                                <ol type="1" start="1" className="song-list">
+                                    { playlist.tracks.items.map((item, idx) => (
+                                        <li key={ idx } className='song-details' id={ `playlist-${playlist.id}-song-${idx}` }>
+                                            <img className='song-cover' src={ item.track.album.images[0].url } alt="Song Cover" />
+                                            <div>
+                                                <p>{ item.track.name }</p>
+                                                <p>Duration: { msToMinutesAndSeconds(item.track.duration_ms) }</p>
+                                            </div>
+                                        </li>
+                                    )) }
+                                </ol>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            ) }
+        </>
     );
+
+
 };
 
 
