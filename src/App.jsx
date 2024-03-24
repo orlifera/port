@@ -28,19 +28,19 @@ function App() {
 
   return (
     <>
-      <Router basename='/port'>
-        { windowWidth > 768 ? null : <Header /> } {/* Render Navbar if window width is greater than 768 */ }
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={ <Home /> } />
-          <Route path="/about" element={ <About /> } />
-          <Route path="/projects" element={ <Projects /> } />
-          <Route path="/skills" element={ <Skills /> } />
-          <Route path="/contact" element={ <Contact /> } />
-          <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
-        </Routes>
-        { windowWidth > 768 ? <Footer /> : null }
-      </Router>
+
+      { windowWidth > 768 ? null : <Header /> } {/* Render Navbar if window width is greater than 768 */ }
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={ <Home /> } />
+        <Route path="/about" element={ <About /> } />
+        <Route path="/projects" element={ <Projects /> } />
+        <Route path="/skills" element={ <Skills /> } />
+        <Route path="/contact" element={ <Contact /> } />
+        <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
+      </Routes>
+      { windowWidth > 768 ? <Footer /> : null }
+
     </>
   );
 }
