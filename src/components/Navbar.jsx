@@ -22,11 +22,11 @@ function Navbar(props) {
                     <p>Orlando Ferazzani</p>
                 </a>
                 <ul>
-                    <Link to="/"><span lang='en'>Home</span></Link>
-                    <Link to="/About"><span lang='en'>About Me</span></Link>
-                    <Link to="/Projects">Progetti</Link>
-                    <Link to="/Skills"><span lang='en'>Skills</span></Link>
-                    <Link to="/Contact">Contatti</Link>
+                    <CustomLink to="/"><span lang='en'>Home</span></CustomLink>
+                    <CustomLink to="/About"><span lang='en'>About Me</span></CustomLink>
+                    <CustomLink to="/Projects">Progetti</CustomLink>
+                    <CustomLink to="/Skills"><span lang='en'>Skills</span></CustomLink>
+                    <CustomLink to="/Contact">Contatti</CustomLink>
                     <li className="switch">
                         <Switch />
                     </li>
