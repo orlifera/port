@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Form() {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_vzetpsr', 'template_lzumfvb', form.current, '2DRACqrQPcyrMzmD7')
+            .then((result) => {
+                console.log(result.text);
+                alert("Email sent successfully")
+                form.current.reset();
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
     return (
         <>
             <script type="text/javascript"
@@ -8,7 +23,7 @@ function Form() {
             <script type="text/javascript" src="../js/form-handler.js"></script>
             <div id="form">
                 <h2 id="headingForm">Oppure scrivimi qua:</h2>
-                <form id="contact-form" method="POST">
+                <form id="contact-form" method="POST" onSubmit={ sendEmail } ref={ form }>
                     <fieldset id="personal">
                         <legend hidden >Informazioni personali</legend>
                         <label for="firstname">Nome:</label>
@@ -42,5 +57,6 @@ function Form() {
         </>
     )
 }
+
 
 export default Form
