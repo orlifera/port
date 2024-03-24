@@ -3,13 +3,13 @@ import MobileSwitch from './MobileSwitch'
 import { Link } from 'react-router-dom';
 
 function MobileNav() {
-    function CustomLink({ to, children, ...props }) {
+    function CustomLink({ href, children, ...props }) {
         const path = window.location.pathname;
         return (
-            <li className={ path === to ? "active" : "" }>
-                <Link to={ to } { ...props }>
+            <li className={ path === href ? "active" : "" }>
+                <a href={ href } { ...props }>
                     { children }
-                </Link>
+                </a>
             </li>
         )
 
@@ -17,7 +17,7 @@ function MobileNav() {
     return (
         <nav id='mobile'>
             <ul>
-                <CustomLink to="/About"><svg width="30px" height="30px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" className="icon">
+                <CustomLink href="/About"><svg width="30px" height="30px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" className="icon">
                     <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
                         <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -2159.000000)" >
                             <g id="icons" transform="translate(56.000000, 160.000000)">
@@ -28,7 +28,7 @@ function MobileNav() {
                         </g>
                     </g>
                 </svg></CustomLink>
-                <CustomLink to="/Projects" >
+                <CustomLink href="/Projects" >
                     <svg fill="none" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         width="30px" height="30px" viewBox="0 0 94.504 94.504"
                         xml:space="preserve" className='icon'>
@@ -48,7 +48,7 @@ function MobileNav() {
                         </g>
                     </svg></CustomLink>
                 <li className='switch'><MobileSwitch /></li>
-                <CustomLink to="/Skills">
+                <CustomLink href="/Skills">
                     <svg height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         viewBox="0 0 232.688 232.688" xml:space="preserve" className='icon'>
                         <g id="XMLID_350_">
@@ -92,7 +92,7 @@ function MobileNav() {
                             </g>
                         </g>
                     </svg></CustomLink>
-                <CustomLink to="/Contact">
+                <CustomLink href="/Contact">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className='icon'>
                         <path fill-rule="evenodd" d="M6 7a1.5 1.5 0 0 1-1.5 1.5A1.467 1.467 0 0 1 3.39 8H1a1 1 0 0 1 0-2h2.39a1.467 1.467 0 0 1 1.11-.5A1.5 1.5 0 0 1 6 7zm0 10a1.5 1.5 0 0 1-1.5 1.5 1.467 1.467 0 0 1-1.11-.5H1a1 1 0 0 1 0-2h2.39a1.467 1.467 0 0 1 1.11-.5A1.5 1.5 0 0 1 6 17z" />
                         <path fill-rule="evenodd" d="M19 2v20a2.006 2.006 0 0 1-2 2H3a2.006 2.006 0 0 1-2-2v-1a1 1 0 0 1 2 0v.5a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-19a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5V3a1 1 0 0 1-2 0V2a2.006 2.006 0 0 1 2-2h14a2.006 2.006 0 0 1 2 2z" />
