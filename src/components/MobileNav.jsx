@@ -7,9 +7,9 @@ function MobileNav() {
         const path = window.location.pathname;
         return (
             <li className={ path === href ? "active" : "" }>
-                <a href={ href } { ...props }>
+                <Link href={ href } { ...props }>
                     { children }
-                </a>
+                </Link>
             </li>
         )
 

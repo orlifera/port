@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Switch from './Switch'
 import MobileNav from './MobileNav';
+import { Link } from 'react-router-dom'
 
 
-function Navbar(props) {
+function Navbar() {
     const [size, setSize] = useState(window.innerWidth);
     useEffect(() => {
         window.addEventListener('resize', handleResize);
