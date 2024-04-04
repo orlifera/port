@@ -3,7 +3,7 @@ import Switch from './Switch'
 import MobileNav from './MobileNav';
 import { NavLink } from 'react-router-dom';
 
-function Navbar(props) {
+function Navbar() {
     const [size, setSize] = useState(window.innerWidth);
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -18,7 +18,7 @@ function Navbar(props) {
     if (size > 768) {
         return (
             <nav id="menu">
-                <a id="logo" href="/">
+                <a id="logo" to="/">
                     <p>Orlando Ferazzani</p>
                 </a>
                 <ul>

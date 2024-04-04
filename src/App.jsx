@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -27,16 +27,18 @@ function App() {
 
   return (
     <>
+
       { windowWidth > 768 ? null : <Header /> } {/* Render Navbar if window width is greater than 768 */ }
       <Navbar />
       <Routes>
-        <Route path="/" element={ <Home /> } />
+        <Route exact path="/" element={ <Home /> } />
         <Route path="/about" element={ <About /> } />
         <Route path="/projects" element={ <Projects /> } />
         <Route path="/contact" element={ <Contact /> } />
         <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
       </Routes>
       { windowWidth > 768 ? <Footer /> : null }
+
     </>
   );
 }

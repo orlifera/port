@@ -313,6 +313,7 @@ div#contacts {
   color: var(--text-100);
   opacity: .85;
   text-align: center;
+  z-index: -999;
 }
 
 
