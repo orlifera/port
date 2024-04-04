@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import Details from './pages/Details'; // Import the Details component
 import Header from './components/Header';
@@ -34,7 +33,6 @@ function App() {
         <Route path="/" element={ <Home /> } />
         <Route path="/about" element={ <About /> } />
         <Route path="/projects" element={ <Projects /> } />
-        <Route path="/skills" element={ <Skills /> } />
         <Route path="/contact" element={ <Contact /> } />
         <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
       </Routes>

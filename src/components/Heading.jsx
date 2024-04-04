@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useTypewriter } from 'react-simple-typewriter';
+import { Link } from 'react-router-dom';
 
 function Heading() {
     const [text] = useTypewriter({
@@ -17,7 +18,7 @@ function Heading() {
             <h3 id='typewriter'>{ title } <span id='change'> { text }</span></h3>
             <section className='description'>
                 <p>
-                    Get to now me by heading down to the <a className='inline-link' href='/About'>About Me</a> page or check out my <a className='inline-link' href='/Projects'>Projects</a>.
+                    Get to now me by heading down to the <Link className='inline-link' to='/About'>About Me</Link> page or check out my <Link className='inline-link' to='/Projects'>Projects</Link>.
                 </p>
             </section>
             <section className='description'>

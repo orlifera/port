@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Switch from './Switch'
 import MobileNav from './MobileNav';
+import { NavLink } from 'react-router-dom';
 
 function Navbar(props) {
     const [size, setSize] = useState(window.innerWidth);
@@ -21,11 +22,18 @@ function Navbar(props) {
                     <p>Orlando Ferazzani</p>
                 </a>
                 <ul>
-                    <CustomLink href="/"><span lang='en'>Home</span></CustomLink>
-                    <CustomLink href="/About"><span lang='en'>About Me</span></CustomLink>
-                    <CustomLink href="/Projects">Progetti</CustomLink>
-                    <CustomLink href="/Skills"><span lang='en'>Skills</span></CustomLink>
-                    <CustomLink href="/Contact">Contatti</CustomLink>
+                    <li>
+                        <NavLink activeclasscame="active" to="/"><span lang='en'>Home</span></NavLink>
+                    </li>
+                    <li>
+                        <NavLink activeclasscame="active" to="/About"><span lang='en'>About Me</span></NavLink>
+                    </li>
+                    <li>
+                        <NavLink activeclasscame="active" to="/Projects">Progetti</NavLink>
+                    </li>
+                    <li>
+                        <NavLink activeclasscame="active" to="/Contact">Contatti</NavLink>
+                    </li>
                     <li className="switch">
                         <Switch />
                     </li>
@@ -39,17 +47,7 @@ function Navbar(props) {
             </>
         )
     }
-    function CustomLink({ href, children, ...props }) {
-        const path = window.location.pathname;
-        return (
-            <li className={ path === href ? "active" : "" }>
-                <a href={ href } { ...props }>
-                    { children }
-                </a>
-            </li>
-        )
 
-    }
 }
 
 
