@@ -208,7 +208,7 @@ a:hover:not(.card a, .playlist-link, header a) {
 /*CONTACTS*/
 #heading {
   text-align: center;
-  width: 70%;
+  width: 100%;
   color: var(--text-100);
   padding: .5em;
 }
@@ -229,23 +229,30 @@ div#contacts {
   align-items: center;
 }
 
+#contatti {
+  margin: auto;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+#contatti li {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 20%;
+  padding: .5em;
+}
+
 .icon {
   vertical-align: middle;
   fill: var(--text-100);
 }
 
-#contatti {
-  padding-bottom: 1.5em;
-}
-
 #contatti li:hover svg {
   fill: var(--text-200);
-}
-
-#contatti li {
-  display: block;
-  padding-inline: 1em;
-  padding-top: 1em;
 }
 
 #headingForm {
