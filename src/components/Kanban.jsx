@@ -17,7 +17,15 @@ function Kanban() {
 
     function generateId() {
         /*Generates a random number between 0 and 10000 */
-        return Math.floor(Math.random * 10001)
+        const rand = Math.floor(Math.random() * 10001);
+        console.log(rand);
+        return rand;
+    }
+
+    function deleteColumn(id) {
+        const filtered = col.filter((column) => column.id !== id)
+        console.log(filtered);
+        setCol(filtered);
     }
 
     return (
@@ -25,7 +33,10 @@ function Kanban() {
             <div className='center-div'>
                 <div className='display-columns'>
                     { col.map((column) => (
-                        <ColumnContainer column={ column } />
+                        <ColumnContainer
+                            key={ column.id }
+                            column={ column }
+                            deleteColumn={ deleteColumn } />
                     )) }
                 </div>
                 <button className='addBtn' onClick={ () => { createColumn(); } }>

@@ -966,12 +966,59 @@ ol.song-list {
 .column {
   background-color: var(--bg-200);
   color: var(--text-100);
-  height: 20em;
-  width: 15em;
+  height: 25em;
+  max-height: 25em;
+  width: 20em;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
 }
+
+.col-content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.col-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--bg-100);
+  font-size: medium;
+  padding: .75em;
+  height: 3em;
+  font-weight: bold;
+  cursor: grab;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px solid var(--accent-100);
+}
+
+.col-number {
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+  padding: .25em .5em;
+  border-radius: 50%;
+}
+
+.test {
+  gap: .5em;
+  display: flex;
+  align-items: center;
+}
+
+.delete {
+  background-color: var(--bg-100);
+  border: none;
+  cursor: pointer;
+}
+
 
 /* .display-columns::-webkit-scrollbar {
   width: 10px;
@@ -986,8 +1033,3 @@ ol.song-list {
 .display-columns::-webkit-scrollbar-thumb:hover {
   background: #555;
 } */
-
-.column-content {
-  display: flex;
-  flex-grow: 1;
-}
