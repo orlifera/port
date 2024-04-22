@@ -8,6 +8,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Details from './pages/Details'; // Import the Details component
 import Header from './components/Header';
+import ToDo from './pages/ToDo';
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -36,6 +37,7 @@ function App() {
         <Route path="/projects" element={ <Projects /> } />
         <Route path="/contact" element={ <Contact /> } />
         <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
+        <Route path="/todo" element={ <ToDo /> } />
       </Routes>
       { windowWidth > 768 ? <Footer /> : null }
 
