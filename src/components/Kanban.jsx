@@ -7,8 +7,9 @@ import { createPortal } from 'react-dom';
 function Kanban() {
 
     const [col, setCol] = useState([]);
-    const columnsId = useMemo(() => col.map((column) => column.id), [col]);
+    const columnId = useMemo(() => col.map((column) => column.id), [col]);
     const [activeCol, setActiveCol] = useState(null);
+    const [tasks, setTasks] = useState([]);
 
     const sensors = useSensors(
         useSensor(PointerSensor, {
@@ -76,19 +77,35 @@ function Kanban() {
         setCol(newCols);
     }
 
+    function createTask(columnId) {
+        const newTask = {
+            id: generateId(),
+            columnId,
+            content: `Task ${tasks.length + 1}`
+        }
+        setTasks([...tasks, newTask])
+    }
+
+    function deleteTask(id) {
+        const newTasks = tasks.filter((task) => task.id !== id);
+        setTasks(newTasks)
+    }
 
     return (
         <div className='wrapper'>
             <DndContext sensors={ sensors } onDragStart={ onDragStart } onDragEnd={ onDragEnd }>
                 <div className='center-div'>
                     <div className='display-columns'>
-                        <SortableContext items={ columnsId }>
+                        <SortableContext items={ columnId }>
                             { col.map((column) => (
                                 <ColumnContainer
                                     key={ column.id }
                                     column={ column }
                                     deleteColumn={ deleteColumn }
                                     updateCol={ updateCol }
+                                    createTask={ createTask }
+                                    tasks={ tasks.filter((task) => task.columnId === column.id) }
+                                    deleteTask={ deleteTask }
                                 />
                             )) }
                         </SortableContext>
@@ -103,6 +120,10 @@ function Kanban() {
                         { activeCol && (<ColumnContainer
                             column={ activeCol }
                             deleteColumn={ deleteColumn }
+                            updateCol={ updateCol }
+                            createTask={ createTask }
+                            tasks={ tasks.filter((task) => task.columnId === activeCol.id) }
+                            deleteTask={ deleteTask }
                         />
                         ) }
                     </DragOverlay>, document.body) }
