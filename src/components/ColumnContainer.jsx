@@ -1,16 +1,74 @@
+import { rectIntersection } from "@dnd-kit/core";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from '@dnd-kit/utilities'
+import { useState } from "react";
+
 function ColumnContainer(props) {
-    const { column, deleteColumn } = props;
+    const { column, deleteColumn, updateCol } = props;
+
+    const [editMode, setEditMode] = useState(false)
+
+    const {
+        setNodeRef,
+        attributes,
+        listeners,
+        transform,
+        transition,
+        isDragging
+    }
+        =
+        useSortable({
+            id: column.id,
+            data: {
+                type: "Column",
+                column,
+            },
+            disabled: editMode,
+        });
+
+    const style = {
+        transition,
+        transform: CSS.Transform.toString(transform),
+    }
+
+    if (isDragging) {
+        return (<div className="column placeholder" ref={ setNodeRef } style={ style }></div>)
+    }
+
     return (
 
-        <div className="column">
+        <div className="column" ref={ setNodeRef } style={ style }>
             {/*Column Title */ }
-            <div className="col-title">
+            <div className="col-title"
+                { ...attributes }
+                { ...listeners }
+                onClick={ () => {
+                    setEditMode(true)
+                } }
+            >
                 <div className="test">
                     <div className="col-number">
                         0
                     </div>
                     <div className="title">
-                        { column.title }
+
+                        { editMode ?
+                            <input
+                                className="title-input"
+                                value={ column.title }
+                                onChange={ (e) => updateCol(column.id, e.target.value) }
+                                autoFocus
+                                onBlur={ () => {
+                                    setEditMode(false)
+                                } }
+                                onKeyDown={ (e) => {
+                                    if (e.key !== "Enter") return;
+                                    setEditMode(false);
+                                } }
+                            />
+                            :
+                            column.title
+                        }
                     </div>
                 </div>
                 <button className="delete" onClick={ () => { deleteColumn(column.id) } }>

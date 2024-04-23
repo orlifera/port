@@ -21,8 +21,8 @@
 }
 
 :root {
-  --default-transition: color .1s ease-in-out, fill .1s ease-in-out,
-    border-color .3s ease-in-out, transform .3s ease-in-out;
+  /*--default-transition: color .1s ease-in-out, fill .1s ease-in-out,
+    border-color .3s ease-in-out, transform .3s ease-in-out; */
   --spotify-green: #11d13e;
   --play-one-header: hsla(0, 55%, 51%, 0.77);
   --play-two-header: hsla(0, 2%, 45%, 0.756);
@@ -40,7 +40,7 @@
   --accent-100: #788189;
   --accent-200: #e1e4e6;
   --text-100: #1E2022;
-  --text-200: #887767;
+  --text-200: #766c6c;
   --text-300: #6b6b6b;
   --bg-100: #F0F5F9;
   --bg-200: #C9D6DF;
@@ -958,7 +958,6 @@ ol.song-list {
 }
 
 .display-columns {
-  height: auto;
   display: flex;
   gap: .5em;
 }
@@ -972,6 +971,14 @@ ol.song-list {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
+}
+
+.column svg {
+  fill: var(--muted-text);
+}
+
+.column svg:hover {
+  fill: white;
 }
 
 .col-content {
@@ -1020,16 +1027,15 @@ ol.song-list {
 }
 
 
-/* .display-columns::-webkit-scrollbar {
-  width: 10px;
-  border-left: .5px solid var(--icon-moon);
+.placeholder {
+  opacity: 60%;
+  border: 1px solid var(--play-one-header)
 }
 
-.display-columns::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+.title-input {
+  height: 2em;
+  background-color: var(--bg-200);
+  outline: none;
+  border: 1px solid var(--play-one-header);
+  color: var(--text-100);
 }
-
-.display-columns::-webkit-scrollbar-thumb:hover {
-  background: #555;
-} */
