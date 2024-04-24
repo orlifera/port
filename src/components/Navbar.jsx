@@ -1,58 +1,57 @@
-import React, { useEffect, useState } from 'react'
-import Switch from './Switch'
+import React, { useEffect, useState } from 'react';
+import Switch from './Switch';
 import MobileNav from './MobileNav';
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
     const [size, setSize] = useState(window.innerWidth);
+
     useEffect(() => {
+        const handleResize = () => {
+            setSize(window.innerWidth);
+        };
+
         window.addEventListener('resize', handleResize);
-        console.log("Navbar mounted");
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
-    function handleResize() {
-        setSize(window.innerWidth);
-    }
-
-
-    if (size > 768) {
-        return (
-            <nav id="menu">
-                <a id="logo" to="/">
-                    <p>Orlando Ferazzani</p>
-                </a>
-                <ul>
-                    <li>
-                        <NavLink activeClassName="active" to="/"><span lang='en'>Home</span></NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/About"><span lang='en'>About Me</span></NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/Projects">Progetti</NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/Contact">Contatti</NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/Todo">ToDo</NavLink>
-                    </li>
-                    <li className="switch">
-                        <Switch />
-                    </li>
-                </ul>
-            </nav>
-        )
-    } else {
-        return (
-            <>
+    return (
+        <>
+            { size > 768 ? (
+                <nav id="menu">
+                    <a id="logo" to="/">
+                        <p>Orlando Ferazzani</p>
+                    </a>
+                    <ul>
+                        { navLinks.map((navLink) => (
+                            <li key={ navLink.to }>
+                                <NavLink activeClassName="active" to={ navLink.to }>
+                                    <span lang="en">{ navLink.label }</span>
+                                </NavLink>
+                            </li>
+                        )) }
+                        <li className="switch">
+                            <Switch />
+                        </li>
+                    </ul>
+                </nav>
+            ) : (
                 <MobileNav />
-            </>
-        )
-    }
-
+            ) }
+        </>
+    );
 }
 
+// Define dynamic navigation links
+const navLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About Me' },
+    { to: '/projects', label: 'Progetti' },
+    { to: '/contact', label: 'Contatti' },
+    { to: '/todo', label: 'ToDo' },
+];
 
-
-export default Navbar
+export default Navbar;

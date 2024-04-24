@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Changed from HashRouter to BrowserRouter
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import Details from './pages/Details'; // Import the Details component
+import Details from './pages/Details';
 import Header from './components/Header';
 import Kanban from './pages/Kanban';
 
@@ -28,19 +28,17 @@ function App() {
 
   return (
     <>
-
       { windowWidth > 768 ? null : <Header /> } {/* Render Navbar if window width is greater than 768 */ }
       <Navbar />
       <Routes>
         <Route exact path="/" element={ <Home /> } />
-        <Route path="/About" element={ <About /> } />
-        <Route path="/Projects" element={ <Projects /> } />
-        <Route path="/Contact" element={ <Contact /> } />
-        <Route path="/Details/:id" element={ <Details /> } /> {/* Route for Details */ }
-        <Route path="/Todo" element={ <Kanban /> } />
+        <Route path="/about" element={ <About /> } /> {/* Changed path to lowercase */ }
+        <Route path="/projects" element={ <Projects /> } /> {/* Changed path to lowercase */ }
+        <Route path="/contact" element={ <Contact /> } /> {/* Changed path to lowercase */ }
+        <Route path="/details/:id" element={ <Details /> } /> {/* Changed path to lowercase */ }
+        <Route path="/todo" element={ <Kanban /> } /> {/* Changed path to lowercase */ }
       </Routes>
       { windowWidth > 768 ? <Footer /> : null }
-
     </>
   );
 }
