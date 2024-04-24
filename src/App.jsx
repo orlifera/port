@@ -33,11 +33,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={ <Home /> } />
-        <Route path="/about" element={ <About /> } />
-        <Route path="/projects" element={ <Projects /> } />
-        <Route path="/contact" element={ <Contact /> } />
-        <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
-        <Route path="/todo" element={ <Kanban /> } />
+        <Route path="/About" element={ <About /> } />
+        <Route path="/Projects" element={ <Projects /> } />
+        <Route path="/Contact" element={ <Contact /> } />
+        <Route path="/Details/:id" element={ <Details /> } /> {/* Route for Details */ }
+        <Route path="/Todo" element={ <Kanban /> } />
       </Routes>
       { windowWidth > 768 ? <Footer /> : null }
 

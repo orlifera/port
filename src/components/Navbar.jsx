@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Switch from './Switch'
 import MobileNav from './MobileNav';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [size, setSize] = useState(window.innerWidth);
@@ -23,22 +23,19 @@ function Navbar() {
                 </a>
                 <ul>
                     <li>
-                        <NavLink activeClassName="active" to="/"><span lang='en'>Home</span></NavLink>
+                        <Link activeClassName="active" to="/"><span lang='en'>Home</span></Link>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/About"><span lang='en'>About Me</span></NavLink>
+                        <Link activeClassName="active" to="/About"><span lang='en'>About Me</span></Link>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/Projects">Progetti</NavLink>
+                        <Link activeClassName="active" to="/Projects">Progetti</Link>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/Contact">Contatti</NavLink>
+                        <Link activeClassName="active" to="/Contact">Contatti</Link>
                     </li>
                     <li className="switch">
                         <Switch />
-                    </li>
-                    <li>
-                        <NavLink className="hidden" to="/Todo"></NavLink>
                     </li>
                 </ul>
             </nav>
