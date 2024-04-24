@@ -26,16 +26,19 @@ function Navbar() {
                         <NavLink activeClassName="active" to="/"><span lang='en'>Home</span></NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/about"><span lang='en'>About Me</span></NavLink>
+                        <NavLink activeClassName="active" to="/About"><span lang='en'>About Me</span></NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/projects">Progetti</NavLink>
+                        <NavLink activeClassName="active" to="/Projects">Progetti</NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/contact">Contatti</NavLink>
+                        <NavLink activeClassName="active" to="/Contact">Contatti</NavLink>
                     </li>
                     <li className="switch">
                         <Switch />
+                    </li>
+                    <li>
+                        <NavLink className="hidden" to="/Todo"></NavLink>
                     </li>
                 </ul>
             </nav>
