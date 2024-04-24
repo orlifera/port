@@ -51,7 +51,6 @@
   --icon-sun: #ee8e44;
   --icon-moon: #b7b7b7;
   --switch-pos: .25em;
-  --change: #aa8b52;
   --change: #396ce2;
   --sun-display: block;
   --moon-display: none;
@@ -66,7 +65,7 @@
   --accent-100: #c0c0c0;
   --accent-200: #d3d3d3;
   --text-100: #e1dfdd;
-  --text-200: #766c6c;
+  --text-200: #817463;
   --text-300: #f9f9f9;
   --link-hover: #f9f9f9;
   --bg-100: #262626;
@@ -119,6 +118,19 @@ header img#logo {
   text-align: right;
   margin: auto;
   font-size: 1.2em;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-200);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /*NAVBAR*/
@@ -754,6 +766,7 @@ ol.song-list {
 
 .song-list li:not(:last-child) {
   border-bottom: 1px solid white;
+  border-right: 1px solid white;
 }
 
 .song-list-container {
@@ -764,7 +777,6 @@ ol.song-list {
 
 .song-list-container::-webkit-scrollbar {
   width: 10px;
-  border-left: .5px solid var(--icon-moon);
 }
 
 .song-list-container::-webkit-scrollbar-thumb {
@@ -1042,7 +1054,7 @@ ol.song-list {
   height: 2em;
   background-color: var(--bg-200);
   outline: none;
-  border: 1px solid var(--play-one-header);
+  border: 1px solid var(--text-200);
   color: var(--text-100);
 }
 
@@ -1064,7 +1076,7 @@ ol.song-list {
 
 .add-task:active {
   background-color: black;
-  color: var(--play-one-header);
+  color: var(--text-200);
 }
 
 .add-task svg {
@@ -1077,7 +1089,7 @@ ol.song-list {
 }
 
 .add-task:active svg {
-  fill: var(--play-one-header);
+  fill: var(--text-200);
 }
 
 .task {
@@ -1094,10 +1106,35 @@ ol.song-list {
 }
 
 .task:hover {
-  border: 1px solid var(--play-one-header);
+  border: 1px solid var(--text-200);
 }
 
 .delete-task {
   position: absolute;
-  right: 1em;
+  right: 1.5em;
+  background-color: transparent;
+}
+
+.task-text {
+  height: 90%;
+  width: 100%;
+  resize: none;
+  background-color: transparent;
+  border: none;
+  color: var(--text-100);
+  font-size: 1em;
+}
+
+.task-text:focus {
+  outline: none;
+}
+
+.task-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  white-space: pre-wrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 auto;
 }

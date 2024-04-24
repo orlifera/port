@@ -1,9 +1,76 @@
 import { React, useState } from 'react'
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities"
 
-function TaskCard({ task, deleteTask }) {
+function TaskCard({ task, deleteTask, updateTask }) {
 
     const [mouseIsOver, setMouseIsOver] = useState(false);
+    const [editMode, setEditMode] = useState(false);
 
+    const toggleEdit = () => {
+        setEditMode((e) => !e);
+        setMouseIsOver(false);
+    }
+
+    const {
+        setNodeRef,
+        attributes,
+        listeners,
+        transform,
+        transition,
+        isDragging
+    }
+        =
+        useSortable({
+            id: task.id,
+            data: {
+                type: "Task",
+                task,
+            },
+            disabled: editMode,
+        });
+
+    const style = {
+        transition,
+        transform: CSS.Transform.toString(transform),
+    }
+
+    if (isDragging) {
+
+        return (
+            <div
+                className='task placeholder'
+                style={ style }
+                ref={ setNodeRef }
+            >
+            </div>)
+    }
+
+    if (editMode) {
+        return (
+            <div
+                className='task'
+                ref={ setNodeRef }
+                onClick={ toggleEdit }
+                style={ style }
+                { ...attributes }
+                { ...listeners }
+            >
+                <textarea
+                    className='task-text'
+                    placeholder='Task Content here'
+                    autoFocus
+                    value={ task.content }
+                    onBlur={ toggleEdit }
+                    onKeyDown={ (e) => {
+                        if (e.key === 'Enter' && e.shiftKey) toggleEdit();
+                    } }
+                    onChange={ (e) => updateTask(task.id, e.target.value) }
+                >
+
+                </textarea>
+            </div>)
+    }
 
 
     return (
@@ -14,8 +81,13 @@ function TaskCard({ task, deleteTask }) {
             onMouseLeave={ () => {
                 setMouseIsOver(false);
             } }
+            onClick={ toggleEdit }
+            ref={ setNodeRef }
+            style={ style }
+            { ...attributes }
+            { ...listeners }
         >
-            { task.content }
+            <p className='task-content'> { task.content }</p>
             { mouseIsOver &&
                 <button className="delete delete-task" onClick={ () => { deleteTask(task.id) } }>
                     <svg width="30px" height="30px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" className="icon">

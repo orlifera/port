@@ -1,13 +1,17 @@
 import { rectIntersection } from "@dnd-kit/core";
-import { useSortable } from "@dnd-kit/sortable";
+import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from '@dnd-kit/utilities'
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import TaskCard from "./TaskCard";
 
 function ColumnContainer(props) {
     const { column, deleteColumn, updateCol, createTask, tasks, deleteTask, updateTask } = props;
 
     const [editMode, setEditMode] = useState(false)
+
+    const tasksId = useMemo(() => {
+        return tasks.map((task) => task.id);
+    }, [tasks])
 
     const {
         setNodeRef,
@@ -87,9 +91,11 @@ function ColumnContainer(props) {
 
 
             <div div className="col-content" >
-                { tasks.map((task) => (
-                    <TaskCard key={ task.id } task={ task } deleteTask={ deleteTask } />
-                )) }
+                <SortableContext items={ tasksId }>
+                    { tasks.map((task) => (
+                        <TaskCard key={ task.id } task={ task } deleteTask={ deleteTask } updateTask={ updateTask } />
+                    )) }
+                </SortableContext>
             </div>
 
 
@@ -102,7 +108,7 @@ function ColumnContainer(props) {
                 </svg>
                 Add Task</button>
 
-        </div >
+        </div>
 
     )
 }
