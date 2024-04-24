@@ -34,6 +34,9 @@ function Navbar() {
                     <li>
                         <NavLink activeClassName="active" to="/Contact">Contatti</NavLink>
                     </li>
+                    <li>
+                        <NavLink activeClassName="active" to="/Todo">ToDo</NavLink>
+                    </li>
                     <li className="switch">
                         <Switch />
                     </li>
