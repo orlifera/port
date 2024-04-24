@@ -1,9 +1,9 @@
 import React, { useMemo, useState, useEffect } from 'react'
-import ColumnContainer from './ColumnContainer';
+import ColumnContainer from '../components/ColumnContainer';
 import { DndContext, DragOverlay, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { SortableContext, arrayMove } from '@dnd-kit/sortable';
 import { createPortal } from 'react-dom';
-import TaskCard from './TaskCard';
+import TaskCard from '../components/TaskCard';
 
 function Kanban() {
 

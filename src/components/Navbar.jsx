@@ -23,16 +23,16 @@ function Navbar() {
                 </a>
                 <ul>
                     <li>
-                        <NavLink activeclasscame="active" to="/"><span lang='en'>Home</span></NavLink>
+                        <NavLink activeClassName="active" to="/"><span lang='en'>Home</span></NavLink>
                     </li>
                     <li>
-                        <NavLink activeclasscame="active" to="/About"><span lang='en'>About Me</span></NavLink>
+                        <NavLink activeClassName="active" to="/about"><span lang='en'>About Me</span></NavLink>
                     </li>
                     <li>
-                        <NavLink activeclasscame="active" to="/Projects">Progetti</NavLink>
+                        <NavLink activeClassName="active" to="/projects">Progetti</NavLink>
                     </li>
                     <li>
-                        <NavLink activeclasscame="active" to="/Contact">Contatti</NavLink>
+                        <NavLink activeClassName="active" to="/contact">Contatti</NavLink>
                     </li>
                     <li className="switch">
                         <Switch />
