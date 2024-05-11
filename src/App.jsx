@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
-import Details from './pages/Details'; // Import the Details component
 import Header from './components/Header';
-import ToDo from './pages/ToDo';
+import Navbar from './components/Navbar';
+import Router from "./pages/router";
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -27,21 +22,16 @@ function App() {
   }, []); // Empty dependency array to run only on mount
 
   return (
-    <>
+    <BrowserRouter>
 
       { windowWidth > 768 ? null : <Header /> } {/* Render Navbar if window width is greater than 768 */ }
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={ <Home /> } />
-        <Route path="/about" element={ <About /> } />
-        <Route path="/projects" element={ <Projects /> } />
-        <Route path="/contact" element={ <Contact /> } />
-        <Route path="/details/:id" element={ <Details /> } /> {/* Route for Details */ }
-        <Route path="/todo" element={ <ToDo /> } />
-      </Routes>
+
+      <Router />
+
       { windowWidth > 768 ? <Footer /> : null }
 
-    </>
+    </BrowserRouter>
   );
 }
 
