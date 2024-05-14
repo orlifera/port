@@ -6,7 +6,7 @@ function Me() {
             <h1 className="title">About Me</h1>
             <section id="about" className="section">
                 <p>
-                    I am a full stack web developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript and React. I am also learning now Typescript and the Next.js framework. I am always eager to learn new technologies and improve my skills.
+                    I am a (almost) full stack web developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript and React. I am also learning now Typescript and the Next.js framework. I am always eager to learn new technologies and improve my skills.
                 </p>
             </section>
             <section id="personal" className="section">
@@ -15,6 +15,17 @@ function Me() {
 
                     In my free time I like to scuba dive, play videogames or go on a bike ride. I am also a cybersecurity passionate and I am always looking for new ways to improve my security and privacy.
                 </p>
+            </section>
+
+            <section id='work' className='section'>
+                <p>
+                    I Own a small tech business since 2022, called <a href='https://mltech.store'>ML Tech</a> that specializes in building Gaming PCs and custom mechanicals keyboards.
+
+                    (maybe i'll create a page just for it when i'm not this lazy LOL)
+
+                    To learn about it, open the link above, or shoot me an email. I'll be more than happy to talk about it.
+                </p>
+
             </section>
 
             <section id="music" className="section">
