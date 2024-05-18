@@ -6,7 +6,7 @@ function Me() {
             <h1 className="title">About Me</h1>
             <section id="about" className="section">
                 <p>
-                    I am a full stack web developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript and React. I am also learning now Typescript and the Next.js framework. I am always eager to learn new technologies and improve my skills.
+                    I am a (almost) full stack web developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript and React. I am also learning now Typescript and the Next.js framework. I am always eager to learn new technologies and improve my skills.
                 </p>
             </section>
             <section id="personal" className="section">
