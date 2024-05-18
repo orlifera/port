@@ -643,6 +643,11 @@ h1.title {
   padding: 1em;
 }
 
+.section a {
+  border-bottom: 1px solid var(--text-200);
+  color: var(--text-200);
+}
+
 .section p {
   font-size: 1.2em;
   line-height: 1.5em;

@@ -17,6 +17,17 @@ function Me() {
                 </p>
             </section>
 
+            <section id='work' className='section'>
+                <p>
+                    I Own a small tech business since 2022, called <a href='https://mltech.store'>ML Tech</a> that specializes in building Gaming PCs and custom mechanicals keyboards.
+
+                    (maybe i'll create a page just for it when i'm not this lazy LOL)
+
+                    To learn about it, open the link above, or shoot me an email. I'll be more than happy to talk about it.
+                </p>
+
+            </section>
+
             <section id="music" className="section">
                 <h2 className="title">Music I Love</h2>
                 <p>
