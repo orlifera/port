@@ -7,14 +7,14 @@
     "repo": "https://github.com/orlifera/TecWeb"
   },
   {
-    "path": "src/assets/images/db.png",
+    "path": "/db.png",
     "id": "DB",
     "projectName": "DataBase for E-commerce",
     "description": "Database Mock per sito ecommerce basato sulla mia azienda",
     "repo": "https://github.com/Pipp0z/ProgettoBasiDati"
   },
   {
-    "path": "src/assets/images/pao.jpg",
+    "path": "/pao.jpg",
     "id": "PAO",
     "projectName": "Tell Me Wine",
     "description": "Applicazione Desktop per la gestione dei sensori di rilevazione dati per produzione viti-vinicola",
