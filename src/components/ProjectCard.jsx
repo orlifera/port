@@ -9,7 +9,7 @@ function Card(props) {
     return (
         <li className='card-container'>
             <div className="card" >
-                <Link to={ `/details/${id}` }>
+                <Link to={ `/projects/${id}` }>
                     <div className="card-content">
                         <img className='profile-picture' alt="profile picture" src={ path }></img>
                         <h2 className='card-title'>Project: { projectName }</h2>

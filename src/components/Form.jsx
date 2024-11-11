@@ -17,7 +17,7 @@ function Form() {
             });
     };
     return (
-        <>
+        <main id="contactMain">
             <script type="text/javascript"
                 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
             <script type="text/javascript" src="../js/form-handler.js"></script>
@@ -54,7 +54,7 @@ function Form() {
 
                 </form>
             </div>
-        </>
+        </main>
     )
 }
 

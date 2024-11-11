@@ -268,6 +268,13 @@ div#contacts {
   fill: var(--text-200);
 }
 
+#contactMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5em;
+}
+
 #headingForm {
   text-align: center;
   width: 100%;
@@ -360,6 +367,14 @@ div#contacts {
   color: var(--bg-100);
   outline: none;
   padding: .75em;
+}
+
+#contact-form input[type="submit"]:focus {
+  background-color: var(--text-200);
+  color: var(--text-100);
+  outline: none;
+  padding: .75em;
+  border: 1px solid var(--primary-100);
 }
 
 
