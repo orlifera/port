@@ -7,7 +7,7 @@ function Card(props) {
     const { id, path, projectName, description, repo } = props;
 
     return (
-        <li className='card-container'>
+        <div className='card-container'>
             <div className="card" >
                 <Link to={ `/projects/${id}` }>
                     <div className="card-content">
@@ -16,7 +16,7 @@ function Card(props) {
                         <p className='card-desc'>Description: { description }</p>
                     </div>
                 </Link>
-                {/* <div className='card-footer'>
+                <div className='card-footer'>
                     <a className='' target='_blank' href={ repo }>
 
                         <svg width="30px" height="30px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" className='icon'>
@@ -31,9 +31,9 @@ function Card(props) {
                             </g>
                         </svg>
                     </a>
-                </div> */}
+                </div>
             </div>
-        </li >
+        </div >
     );
 }
 

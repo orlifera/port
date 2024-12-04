@@ -15,7 +15,8 @@ function Projects() {
             <h1 className='title'>Progetti completati</h1>
             <ul id="projects">
                 { projectsData.map((projects) => (
-                    <Link key={ projects.id } to={ `/${projects.id}` }>
+                    <li key={ projects.id }>
+                        {/* <Link to={ `/projects/${projects.id}` }> */ }
                         <ProjectCard
                             path={ projects.path }
                             id={ projects.id }
@@ -24,9 +25,10 @@ function Projects() {
                             repo={ projects.repo }
                         />
                         { console.log(projects.repo) }
-                    </Link>
+                        {/* </Link> */ }
+                    </li>
                 )) }
-            </ul>
+            </ul >
         </>
     );
 }
