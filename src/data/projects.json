@@ -19,5 +19,12 @@
     "projectName": "Tell Me Wine",
     "description": "Applicazione Desktop per la gestione dei sensori di rilevazione dati per produzione viti-vinicola",
     "repo": "https://github.com/orlifera/PaO"
+  },
+  {
+    "path": "/project.png",
+    "id": "website",
+    "projectName": "Random Project",
+    "description": "Random Website creato per allenare le mie skill. ",
+    "repo": "https://github.com/orlifera/project"
   }
 ]

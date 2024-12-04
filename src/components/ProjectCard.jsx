@@ -16,8 +16,8 @@ function Card(props) {
                         <p className='card-desc'>Description: { description }</p>
                     </div>
                 </Link>
-                <div className='card-footer'>
-                    <a target='_blank' href={ repo }>
+                {/* <div className='card-footer'>
+                    <a className='' target='_blank' href={ repo }>
 
                         <svg width="30px" height="30px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" className='icon'>
                             <g id="Page-1" stroke="none" stroke-width="1">
@@ -31,7 +31,7 @@ function Card(props) {
                             </g>
                         </svg>
                     </a>
-                </div>
+                </div> */}
             </div>
         </li >
     );

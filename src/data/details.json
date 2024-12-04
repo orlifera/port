@@ -22,5 +22,13 @@
     "title": "Tell Me Wine",
     "description": "Applicazione realizzata in coppia, per il progetto universitario del corso di Programmazione ad Oggetti. L'applicazione è stata sviluppata in C++, con l'ausilio di QT per la parte grafica. L'applicazione è stata sviluppata per la gestione dei sensori di rilevazione dati per la produzione viti-vinicola, in particolare sensori di pressione, temperatura e umidità. I sensori sono organizzati in 'Gruppi' che non sono altro che sensori collegati da un fattore logico comune. L'applicazione è in grado di generare i dati secondo diverse distribuzioni che seguono l'andamento reale del fenomeno misurato, gestire i sensori e le loro informazioni e creare un grafico per la visualizzazione dei dati misurati. Inoltre, è in grado di generare un file .json con i dati rilevati.",
     "repo": "https://github.com/orlifera/PaO"
+  },
+  {
+    "id": "website",
+    "img": "/project.png",
+    "caption": "Random Project WishList",
+    "title": "Random Project",
+    "description": "Progetto sviluppato per allenare le mie skill. Il sito è stato sviluppato in Typescipt e React. Il sito offre diverse funzionalità, come un countdown ad una targetDate, uno spazio dove inserire delle note di testo da file json, una wishlist che fa il retrieval dei dati con un fetch da un file json hostato sulla stessa GitHu Repo utilizzando le github api, una watchlist che utilizza TMDB e una galleria di immagini che usa yet-another-react-lightbox.",
+    "repo": "https://github.com/orlifera/project"
   }
 ]

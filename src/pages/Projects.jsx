@@ -1,23 +1,29 @@
 // Projects.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
 import ProjectCard from '../components/ProjectCard';
 import projectsData from '../data/projects.json'; // Adjust the path if necessary
 
 function Projects() {
+    const { id } = useParams();
+    const project = projectsData.find((project) => project.id === id);
+
+
     return (
         <>
             <h1 className='title'>Progetti completati</h1>
             <ul id="projects">
-                { projectsData.map((project) => (
-                    <Link key={ project.id } to={ `/${project.id}` }>
+                { projectsData.map((projects) => (
+                    <Link key={ projects.id } to={ `/${projects.id}` }>
                         <ProjectCard
-                            path={ project.path }
-                            id={ project.id }
-                            projectName={ project.projectName }
-                            description={ project.description }
-                            repo={ project.repo }
+                            path={ projects.path }
+                            id={ projects.id }
+                            projectName={ projects.projectName }
+                            description={ projects.description }
+                            repo={ projects.repo }
                         />
+                        { console.log(projects.repo) }
                     </Link>
                 )) }
             </ul>
